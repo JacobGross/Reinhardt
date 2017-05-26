@@ -47,3 +47,13 @@ Hess := D[H, {{x,y,v1,v2,c11,c12,c21}, 2}];
 Hess/.{u0 ->1 , u1 -> 0, u2 -> 0}
 Hess/.{u0 ->0, u1 -> 1, u2 -> 0}
 Hess/.{u0 ->0 , u1 -> 0, u2 -> 1}
+
+(* Lagrangian Graph *)
+
+z = x+I*y;
+w = (z-I)/(z+I);
+u = ComplexExpand[Re[w]];
+v = ComplexExpand[Im[w]];
+theta = ArcTan[v/u];
+D[theta, x];
+D[theta, y];
